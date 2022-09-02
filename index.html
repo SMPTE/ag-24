@@ -1,332 +1,545 @@
 <!DOCTYPE html lang="en">
 <html>
 
-<head itemscope="itemscope" itemtype="http://smpte.org/standards/documents">
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="tooling/smpte.js"></script>
-  <link rel="stylesheet" href="tooling/smpte.css" />
-  <meta itemprop="pubType" content="AG" />
-  <meta itemprop="pubNumber" content="25" />
-  <meta itemprop="pubState" content="published" />
-  <meta itemprop="pubDateTime" content="2022-07-05" />
-  <title>Use of JSON in Engineering Documents</title>
-</head>
+  <head itemscope="itemscope" itemtype="http://smpte.org/standards/documents">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="tooling/smpte.js"></script>
+    <link rel="stylesheet" href="tooling/smpte.css" />
+    <meta itemprop="pubType" content="AG" />
+    <meta itemprop="pubNumber" content="24" />
+    <meta itemprop="pubState" content="published" />
+    <meta itemprop="pubDateTime" content="2019-07-02" />
+    <title>AG-24 MXF UL Style Guidelines</title>
+  </head>
 
-<body>
+  <body>
 
-  <section id="sec-foreword" class="unnumbered"></section>
+    <section id="sec-foreword" class="unnumbered"></section>
 
-  <section id="sec-toc" class="unnumbered"></section>
+    <section id="sec-toc" class="unnumbered"></section>
 
-  <section id="sec-scope">
-    <h2>Scope</h2>
-    <p>This Administrative Guideline specifies selected uses of the JavaScript Object Notation (JSON) in SMPTE
-      Engineering Documents.</p>
-  </section>
-
-  <section id="sec-conformance"></section>
-
-  <section id="sec-normative-references">
-    <ul>
-      <li><cite id="bib-ietf-rfc-3986">IETF RFC 3986</cite>, Uniform Resource
-      Identifiers (URI): Generic Syntax, T. Berners-Lee, et al., January 2005. <a>http://www.ietf.org/rfc/rfc3986.txt</a></li>
-      <li><cite id="bib-ietf-rfc-5234">IETF RFC 5234</cite>, “Augmented BNF for
-      Syntax Specifications: ABNF”, D. Crocker, January 2008. <a>https://www.rfc-editor.org/rfc/rfc5234.txt</a></li>
-      <li><cite id="bib-ietf-rfc-7405">IETF RFC 7405</cite>, “Case-Sensitive
-      String Support in ABNF”, P. Kyzivat, December 2014. <a>https://datatracker.ietf.org/doc/html/rfc7405.txt</a></li>
-      <li><cite id="bib-ietf-rfc-8259">IETF RFC 8259</cite>, The JavaScript
-      Object Notation (JSON) Data Interchange Format, T. Bray, <a>http://www.ietf.org/rfc/rfc8259.txt</a></li>
-    </ul>
-  </section>
-
-  <section id="sec-smpte-json-structures">
-    <h2>SMPTE JSON structures</h2>
-    <section id="sec-overview">
-      <h3>Overview (informative)</h3> 
-      The JSON Schema resource applicable to a JSON structure can specify constraints to which the structure is expected to conform.
-    </section>
-    
-    <section id="sec-json-structures">
-      <h3>JSON Structures</h3>
-      
+    <section id="sec-scope">
+      <h2>Scope</h2>
       <p>
-        A <dfn>SMPTE JSON structure</dfn> is any data structure that (a) is specified by an
-        Engineering Document and (b) conforms to <a
-        href="#bib-ietf-rfc-8259"></a> (i.e., a JSON document), whether within
-        the prose or as an Additional Element.
-      </p>
-      
-      <p>
-        The structure of each <a>SMPTE JSON structure</a> shall be normatively specified
-        the Engineering Document.
+        This Administrative Guideline is a collection of guidelines
+        and policies that are intended to help SMPTE Engineering
+        Document authors and editors when defining Universal Labels.
       </p>
       <p>
-        Each SMPTE JSON structure should be informatively specified by a JSON Schema
-        resource, which may be a SMPTE JSON Schema resource (see section 5), using
-        the JSON Schema language as specified in <a href="#bib-draft-bhutton-json-schema-00"></a>.
+        This Administrative Guideline augments the ISO Directives with
+        information and recommendations to be used when writing SMPTE
+        Engineering Documents.
       </p>
-    </section>
-    
-  </section>
-
-<section id="sec-smpte-json-schema-resources">
-  <h2>SMPTE JSON Schema resources</h2>
-  
-  <section id="sec-introduction">
-    <h3>Introduction (informative)</h3>
-    
-    <p>Using the formal language of JSON Schema, descriptions of conformance
-    requirements for JSON structures can avoid some of the ambiguity inherent with
-    using English prose alone, while allowing the use of existing commercial tools
-    to facilitate testing and validation. It can also represent a significant
-    convenience to implementers, for example by supporting the ability to
-    automatically validate structures.</p>
-    
-    <p>Sample relative link to a <a href="sample.png">picture</a>.</p>
-
-  </section>
-  
-  <section id="sec-canonical-uri">
-    <h3>Canonical URI</h3>
-    
-    <section id="sec-id-keyword">
-      <h4><code>$id</code> Keyword</h4>
-      
-      <p>A SMPTE JSON Schema resource shall use the <code>$id</code> keyword in the root schema
-      object, thereby providing the canonical URI for the JSON root schema.</p>
-    </section>
-    
-    <section id="sec-canonical-uri-syntax">
-      <h4>Canonical URI Syntax</h4>
-      
-      The canonical URI shall conform to the <code>SCHEMAID</code> syntax below,
-      specified using <a href="#bib-ietf-rfc-5234"></a> and <a
-      href="#bib-ietf-rfc-7405"></a> and conforming to <a
-      href="#bib-ietf-rfc-3986"></a>.
-      
-<pre>
-SCHEMAID = %s"https://www.smpte-ra.org/json-schema/" PUBNUM "/" REVISION [ "/" SHORTNAME]
-SHORTNAME = 1*4("/" 1*(ALPHA / DIGIT / "-" / "_" / ".") )
-PUBNUM = 1*(DIGIT) ["-" 1*(DIGIT)]
-REVISION = STABLEREV
-STABLEREV = 4(DIGIT) [2(DIGIT)]
-</pre>
-      
-      <p><code>PUBNUM</code> shall represent the official publication number of the
-      Engineering Document, without leading zeroes and including a part number, if
-      any, separated by a hyphen, e.g., 456-1.</p>
-      
-      <p class="note">The <code>REVISION</code> component of a stable SMPTE JSON
-      Schema canonical URI does not necessarily correspond to the publication
-      date of its defining Engineering Document. For instance, the defining
-      Engineering Document can be revised in such a way that the contents of the
-      JSON Schema remain unchanged.</p>
-      
-      <p class="note">
-        No changes to SMPTE JSON Schema canonical URI are necessary following a Draft
-        Publication ballot since SMPTE JSON Schema canonical URI are constructed
-        independently of the publication date of the Engineering Document.
-      </p>
-    </section>
-    
-    <section id="sec-examples">
-      <h4>Examples (informative)</h4>
-      The following is an example SMPTE JSON Schema resource canonical URI:
-      
-      <pre>https://www.smpte-ra.org/json-schema/456/2021/foo</pre>
-      
-      <p><a href="#table-examples"></a> lists examples.</p>
-
-      <table id="table-examples">
-        <caption>Examples</caption>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>URI</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Hello</td>
-            <td>https://www.smpte-ra.org/json-schema/456/2021/foo</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    
-    <section id="sec-registration">
-      <h4>Registration (informative)</h4>
-      
       <p>
-        The SMPTE JSON Schema resource canonical URI syntax ensures uniqueness across
-        Engineering Documents, and thus no specific registration steps are required.
+        AG-02 (Engineering Documents) describes file names, dates and
+        file packages for documents in development. AG16 describes the
+        Styles that are recommended for authoring Engineering
+        Documents.
       </p>
-
-      <p><a href="#figure-process-flowchart"></a> shows an example of the process.</p>
-
-      <figure id="figure-process-flowchart">
-        <figcaption>Example of the Process</figcaption>
-        <img class="figure" src="sample.png">
-      </figure>
-      
     </section>
-  </section>
-  
-  <section id="sec-using-a-smpte-json-schema-resource">
-    <h3>Using a SMPTE JSON Schema Resource</h3>
-    
-    <p>A SMPTE JSON Schema resource can be used informatively by an Engineering
-    Document, either by inclusion or by reference.</p>
-    
-    <p class="note">The current specification of JSON Schema, though well-supported, is not a
-    normatively referenceable document per the Standards Operations Manual (section
-    10 Normative References) and AG-03. Thus, provision of SMPTE JSON Schema
-    resources, at this time, is strictly informative.</p>
-  </section>
-    
-  <section id="sec-version">
-    <h3>Version</h3>
-    
-    <p>
-      Whenever a SMPTE JSON Schema resource is provided, the Engineering Document
-      shall provide an informative reference to the JSON Schema language specification
-      to which it conforms (e.g., JSON Schema, as shown in the Bibliography).
-    </p>
-    
-    <p>
-      A SMPTE JSON Schema resource shall use the <code>$schema</code> keyword in the root schema
-      object.
-    </p>
-    
-    <p class="note">
-      the <code>$schema</code> keyword is both used as JSON Schema dialect identifier and
-      as the identifier of a resource which is itself a JSON Schema resource to
-      evaluate conformance to that dialect.
-    </p>
-    
-    <p class="note">
-      JSON Schema resources can comprise subschemas, where portions of a root
-      schema document are separately identifiable by a URI-reference that are not
-      absolute and/or contain non-empty fragments.  For example,
-      <code>https://smpte-ra.org/schemas/2120-2/2021/smpte-tlx-items/definitions/rationalType</code>
-      is a reference to a subschema within the SMPTE JSON Schema resource
-      <code>https://smpte-ra.org/schemas/2120-2/2021/smpte-tlx-items</code>
-      where the subschema represents the constraints for a JSON structure
-      representing a rational value.
-    </p>
-    
-  </section>
-  
-  <section id="sec-keyword-order">
-    <h3>Keyword Order</h3>
-    
-    <p>The following keywords should appear as the first keywords in any SMPTE JSON Schema resource in this order:</p>
-    
-    <ul>
-      <li><code>$schema,</code> as specified in <a href="#sec-version"></a></li>
-      <li><code>$id,</code> as specified in <a href="#sec-id-keyword"></a>; and,</li>
-      <li><code>$comment,</code> as specified in <a
-      href="#sec-cc-license-schema-resources"></a>.</li>
-    </ul>
 
-  </section>
-</section>
+    <section id="sec-conformance"></section>
 
-<section id="sec-copyright-and-license">
-  <h2>Copyright and License</h2>
-  
-  <section id="sec-license">
-    <h3>License</h3>
-    
-    <p>
-      Any SMPTE JSON structure or SMPTE JSON Schema resource, whether provided within
-      the prose or as an Additional Element of an Engineering Document, shall be
-      licensed according to <a href="#sec-json-document-license"></a>.
-    </p>
-    
-    <p class="note">
-      The license portion of Annex A is verbatim the BSD-3-Clause license
-      available at <a>https://spdx.org/licenses/BSD-3-Clause.html</a>.
-    </p>
-  </section>
-  
-  <section id="sec-cc-license-schema-resources">
-    <h3>Copyright and License in SMPTE JSON Schema resources</h3>
-    
-    Any SMPTE JSON Schema resource shall include the copyright and license
-    provided in <a href="#sec-json-document-license"></a> in the form of the
-    <code>$comment</code> element specified in <a href="#sec-license-element"></a>.
-  </section>
-</section>
+    <section id="sec-normative-references">
+      <ul>
+        <li>
+          <cite id="bib-smpte-st-om">
+            SMPTE Standards Operation Manual (2015 v3.01)
+          </cite>
+        </li>
+        <li>
+          <cite id="bib-smpte-ag-02">SMPTE AG-02:201x</cite>
+          Engineering Documents SMPTE AG-03:2014 Normative References
+        </li>
+        <li>
+          <cite id="bib-smpte-ag-04">SMPTE AG-04:2016</cite>
+          SMPTE Document Templates. SMPTE AG-05:2016 XML Schema
+        </li>
+        <li>
+          <cite id="bib-smpte-ag-16">SMPTE AG-16:2017</cite>
+          Document Style Guidelines
+        </li>
+        <li>
+          <cite id="bib-smpte-ag-19">SMPTE AG-18:2017</cite>
+          SMPTE Metadata Registers Maintenance and Publication
+        </li>
+        <li>
+          <cite id="bib=smpte-st-2009">SMPTE ST 2029:2009</cite>
+          Uniform Resource Names for SMPTE Resources
+        </li>
+        <li>
+          <cite id="bib-smpte-st-336">SMPTE ST 336:2017</cite>
+          Data Encoding Protocol Using Key-Length-Value
+        </li>
+      </ul>
+    </section>
 
-<section class="annex" id="sec-json-document-license">
-  <h2>JSON Document License</h2>
+    <section id="sec-universal-labels">
+      <h2>Universal Lables</h2>
 
-  <section id="sec-copyright-element">
-    <h3>Copyright Element</h3>
-<pre>
-Copyright (c), Society of Motion Pictures and Television Engineers. 
+      <section id="sec-style">
+        <h3>Style Guidelines</h3>
+        <p>
+          Universal Labels are used in MXF documents in several
+          contexts. Each of these has particular requirements in terms
+          of layout and presentation of the label. The list below is
+          expanded in the following sections
+        </p>
+        <ul>
+          <li>Defining individual ULs</li>
+          <li>Referring to ULs</li>
+          <li>Summarizing ULs in a document</li>
+        </ul>
+        <p>
+          This document recommends UL styles that minimize errors for
+          implementers copying ULs from MXF documents. The trend
+          toward software processes for implementation and validation
+          make this a priority over the original MXF style of using
+          Word tables and long prose.
+        </p>
+        <p>
+          In the current Engineering Document templates, using Arial
+          Bold 9 point for table headings and Arial undecorated 8
+          point for table cells reduces the chance of unwanted line
+          breaks without the text being unnecessarily small.
+        </p>
+      </section>
+      
+      <section id="sec-defining-uls">
+        <h3>Defining individual ULs</h3>
+        <p>
+          The example below shows the preferred way for defining ULs
+          in MXF documents. It is a modified version of Table 2 in ST
+          2094-2.
+        </p>
+        <div style="border: 1px solid; padding-left: 10px; padding-right: 10px">
+          <table id="table-preferred-ul" width="100%">
+            <caption>
+              Example <span style="color:red">Preferred</span> Table 2
+              updated from ST 2094-2 – Group Node and Set Key for DMCVT
+              Sets
+            </caption>
+            <tr><th>Item Name</th>              <th>Symbol</th>               <th>Kind</th> <th>Item UL</th></tr>
+            <tr><td>Color Transform Sets</td>   <td>ColorTransformSets</td>   <td>NODE</td> <td>urn:smpte:ul:060e2b34.027F0101.05310000.00000000</td></tr>
+            <tr><td>DMCVT Generic Sets</td>     <td>DMCVTGenericSets</td>     <td>NODE</td> <td>urn:smpte:ul:060e2b34.027F0101.05310100.00000000</td></tr>
+            <tr><td>DMCVT Generic Set 1</td>    <td>DMCVTGenericSet1</td>     <td>LEAF</td> <td>urn:smpte:ul:060e2b34.027F0101.05310101.00000000</td></tr>
+            <tr><td>DMCVT Application Sets</td> <td>DMCVTApplicationSets</td> <td>NODE</td> <td>urn:smpte:ul:060e2b34.027F0101.05310200.00000000</td></tr>
+          </table>
+        </div>
+        <dl>
+          <dt><strong>Item Name</strong></dt>
+          <dd>
+            [optional in MXF documents] value of the &lt;Name&gt; element
+            in the corresponding register for the UL. The case of the
+            characters, whitespace and spellings shall be identical to
+            the register.
+          </dd>
+          <dt><strong>Symbol</strong></dt>
+          <dd>
+            [required in MXF documents] value of the &lt;Symbol&gt;
+            element in the corresponding register for the UL. The case
+            of the characters and spellings shall be identical to the
+            register.
+          </dd>
+          <dt><strong>Kind</strong></dt>
+          <dd>
+            value of the &lt;Kind&gt; element in the corresponding
+            register for the UL
+          </dd>
+          <dt><strong>Item UL</strong></dt>
+          <dd>
+            value of the &lt;UL&gt; element in the corresponding
+            register for the UL using the correct encoding style for
+            the label
+          </dd>
+          <dt><strong>Table title</strong></dt>
+          <dd>
+            use of the word <strong>Label</strong>
+            or <strong>Element</strong> or <strong>Type</strong>
+            or <strong>Group</strong> is encouraged to help novice
+            readers locate the register in which the UL can be found
+          </dd>
+        </dl>
+        <p>
+          Extra explanatory free-form text outside the summary table
+          is encouraged to clearly define the semantics of the UL.
+        </p>
+        <p>
+          The following example shows a UL description from SMPTE ST
+          382-4 followed by the preferred alternative
+          representation. Note that in the preferred representation,
+          the second table is no longer part of the UL description and
+          only serves to provide the common names of the AAC
+          profiles. In most cases a second table is not required.
+        </p>
+        <div style="border: 1px solid; padding-left: 10px; padding-right: 10px">
+          <table id="table-sound-coding" width="100%">
+            <caption>
+              Example – <span style="color:red">Original</span>
+              Table 5 – Sound Essence Coding Label Value for AAC
+            </caption>
+            <tr><th>Byte No.</th> <th>Description</th>                  <th>Value (hex)</th> <th>Meaning</th></tr>
+            <tr><td>1</td>        <td>Object Identifier</td>            <td>06h</td>         <td></td></tr>
+            <tr><td>2</td>        <td>Label size</td>                   <td>0eh</td>         <td></td></tr>
+            <tr><td>3</td>        <td>Designator</td>                   <td>2bh</td>         <td>ISO, ORG</td></tr>
+            <tr><td>4</td>        <td>Designator</td>                   <td>34h</td>         <td>SMPTE</td></tr>
+            <tr><td>5</td>        <td>Registry Category Designator</td> <td>04h</td>         <td>Labels</td></tr>
+            <tr><td>6</td>        <td>Registry Designator</td>          <td>01h</td>         <td>Labels Registry</td></tr>
+            <tr><td>7</td>        <td>Structure Designator</td>         <td>01h</td>         <td>Labels Structure</td></tr>
+            <tr><td>8</td>        <td>Version Number</td>               <td>0dh</td>         <td>Version of the Registry</td></tr>
+            <tr><td>9</td>        <td>Parametric</td>                   <td>04h</td>         <td>Node used to define parametric data</td></tr>
+            <tr><td>10</td>       <td>Sound Essence</td>                <td>02h</td>         <td>Identifies Sound Essence</td></tr>
+            <tr><td>11</td>       <td>Sound Coding Characteristics</td> <td>02h</td>         <td>Identifies Sound Coding Characteristics </td></tr>
+            <tr><td>12</td>       <td>Compressed Sound Coding</td>      <td>02h</td>         <td>Identifies Compressed Sound Coding </td></tr>
+            <tr><td>13</td>       <td>MPEG Audio Compression</td>       <td>04h</td>         <td>Identifies MPEG Audio Compression </td></tr>
+            <tr><td>14</td>       <td>MPEG Audio Coding Details 1</td>  <td>xxh</td>         <td>See Table 6</td></tr>
+            <tr><td>15</td>       <td>MPEG Audio Coding Details 2</td>  <td>yyh</td>         <td>See Table 6</td></tr>
+            <tr><td>16</td>       <td>MPEG Audio Coding Details 3</td>  <td>00h</td>         <td>Reserved</td></tr>
+          </table>
+          <p>
+            The values for bytes 14 and 15 of the Label identify the
+            usage of AAC and shall be as enumerated in Example –
+            <span style="color:red">Original</span> Table :
+          </p>
+          <table id="table-sound-coding-bytes" width="100%">
+            <caption>
+              Example – <span style="color:red">Original</span>
+              Table 6 – Values of Bytes 14 and 15 for Sound
+              Essence Coding Label for AAC Audio
+            </caption>
+            <tr><th>MPEG Standard</th> <th>AAC General Name</th> <th>Value of Byte 14 (hex)</th> <th>Value of Byte 15 (hex)</th> <th>AAC Profile</th></tr>
+            <tr><td>MPEG-2 AAC</td>    <td>LC</td>               <td>03h</td>                    <td>01h</td>                    <td>Low Complexity profile MPEG-2 AAC</td></tr>
+            <tr><td>MPEG-2 AAC</td>    <td>LC + SBR</td>         <td>03h</td>                    <td>02h</td>                    <td>Low Complexity profile MPEG-2 AAC+SBR</td></tr>
+            <tr><td>MPEG-4 AAC</td>    <td>AAC LC</td>           <td>04h</td>                    <td>01h</td>                    <td>MPEG-4 AAC Profile</td></tr>
+            <tr><td>MPEG-4 AAC</td>    <td>AAC LC + SBR</td>     <td>04h</td>                    <td>02h</td>                    <td>MPEG-4 High Efficiency AAC Profile</td></tr>
+            <tr><td>MPEG-4 AAC</td>    <td>AAC + SBR + PS</td>   <td>04h</td>                    <td>03h</td>                    <td>MPEG-4 High Efficiency AAC v2 Profile</td></tr>
+          </table>
+          <p class="note">
+            AAC “General Name” is the commonly used terminology.
+          </p>
+        </div>
+        <br>
+        <div style="border: 1px solid; padding-left: 10px; padding-right: 10px">
+          <table id="table-sound-compression" width="100%">
+            <caption>
+              Example – <span style="color:red">Preferred</span>
+              Table 5 – Sound Essence Coding Label Value for AAC
+            </caption>
+            <tr><th>Item Name</th>                             <th>Symbol</th>                                <th>Kind</th> <th>Item UL</th></tr>
+            <tr><td>MPEG 2 Advanced Audio Coding</td>          <td>MPEG_2_Advanced_Audio_Coding</td>          <td>NODE</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030000</td></tr>
+            <tr><td>MPEG 2 LC AAC</td>                         <td>MPEG_2_LC_AAC</td>                         <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030100</td></tr>
+            <tr><td>MPEG 2 AAC SBR</td>                        <td>MPEG_2_AAC_SBR</td>                        <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030200</td></tr>
+            <tr><td>MPEG 4 Advanced Audio Coding</td>          <td>MPEG_4_Advanced_Audio_Coding</td>          <td>NODE</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040000</td></tr>
+            <tr><td>MPEG 4 AAC Profile</td>                    <td>MPEG_4_AAC_Profile</td>                    <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040100</td></tr>
+            <tr><td>MPEG 4 High Efficiency AAC Profile</td>    <td>MPEG_4_High_Efficiency_AAC_Profile</td>    <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040200</td></tr>
+            <tr><td>MPEG 4 High Efficiency AAC v2 Profile</td> <td>MPEG_4_High_Efficiency_AAC_v2_Profile</td> <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040300</td></tr>
+          </table>
+          <p class="note">
+            All labels are Leaves of
+            urn:smpte:ul:060e2b34.0401010d.04020202.04xxyyzz MPEG Audio
+            Compression
+          </p>
+          <table id="table-aac-audio-bytes" width="100%">
+            <caption>
+              Example – <span style="color:red">Preferred</span>
+              Table 6 – Values of Bytes 14 and 15 for Sound
+              Essence Coding Label for AAC Audio
+            </caption>
+            <tr><th>MPEG Standard</th>                         <th>AAC General Name</th> <th>AAC Profile</th></tr>
+            <tr><td>MPEG_2_LC_AAC</td>                         <td> LC</td>              <td> Low Complexity profile MPEG-2 AAC</td></tr>
+            <tr><td>MPEG_2_AAC_SBR</td>                        <td>LC + SBR</td>         <td> Low Complexity profile MPEG-2 AAC+SBR</td></tr>
+            <tr><td>MPEG_4_AAC_Profile</td>                    <td>AAC LC</td>           <td>MPEG-4 AAC Profile</td></tr>
+            <tr><td>MPEG_4_High_Efficiency_AAC_Profile</td>    <td>AAC LC + SBR</td>     <td> MPEG-4 High Efficiency AAC Profile</td></tr>
+            <tr><td>MPEG_4_High_Efficiency_AAC_v2_Profile</td> <td>AAC + SBR + PS</td>   <td> MPEG-4 High Efficiency AAC v2 Profile</td></tr>
+          </table>
+          <p class="note">
+            AAC“GeneralName”isthecommonlyusedterminology.
+          </p>
+        </div>
+      </section>
 
-Redistribution and use in source and binary forms, with or without modification,
-are permitted provided that the following conditions are met: 
-</pre>
-<p><a href="#table-copyright-forms"></a> lists copyright forms.</p>
-<table id="table-copyright-forms">
-  <caption>Copyright Forms</caption>
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>(c)</td>
-    </tr>
-    <tr>
-      <td>©</td>
-    </tr>
-  </tbody>
-</table>
-  </section>
+      <section id="sec-groups-and-set">
+        <h3>Defining groups and sets</h3>
+        <p>
+          There is more information to be conveyed when defining
+          groups and sets. For this reason, a two-table approach is
+          recommended for readability.
+        </p>
+        <p>
+          The first table shall be identical in style to the table
+          AG24-2.2.1 above. The purpose of this table is to enumerate
+          the full UL for each property in the group.
+        </p>
+        <p>
+          The second table shall be indexed by the Item Name from the
+          first table (identical in spelling, case and
+          whitespace). The purpose of the second table is to define
+          the syntax and semantics of properties in the group.
+        </p>
+        <p>
+          Two worked examples are shown below. The example marked
+          ‘preferred’ is preferred since it is facilitating text
+          search and checking:
+        </p>
+        <div style="border: 1px solid; padding-left: 10px; padding-right: 10px">
+          <table id="table-aac-sub" width="100%">
+            <caption>
+              Example – <span style="color:red">Original</span>
+              Table 1 – AAC SubDescriptor
+            </caption>
+            <tr><th>Item Name</th>                 <th>Type</th>          <th>Len</th>              <th>Item UL</th>                                      <th>Req ?</th>          <th>Meaning</th>                                                                 <th>Default</th></tr>
+            <tr><td>AAC SubDescriptor</td>         <td>Set UL</td>        <td>16</td>               <td>See Table 2</td>                                  <td>Req</td>            <td>Advanced Audio Coding SubDescriptor</td>                                     <td></td></tr>
+            <tr><td>Length</td>                    <td>BER Length</td>    <td>4</td>                <td></td>                                             <td>Req</td>            <td>Set length</td>                                                              <td></td></tr>
+            <tr><td colspan="7"><center>All items from the abstract SubDescriptor as specified in SMPTE ST 377-1 annex B.3 „SubDescriptor</center></td></tr>
+            <tr><td>AAC Sampling Frequency</td>    <td>Uint8</td>         <td>1</td>                <td>060e2b34<br>0101010e<br>04020403<br>01040000</td> <td>Opt</td>            <td>Low order 4 bits of Sampling Frequency Index. Upper 4 bits are zeros *1</td> <td></td></tr>
+            <tr><td>AAC Channel Configuration</td> <td>Uint8</td>         <td>1</td>                <td>060e2b34<br>0101010e<br>04020403<br>01030000</td> <td>Opt</td>            <td>Low order 4 bits of Channel Configuration. Upper 4 bits are zeros *2</td>    <td></td></tr>
+          </table>
+          <p>
+            *1 ISO/IEC 13818-7 (MPEG-2 AAC) and ISO/IEC 14496-3 (MPEG-4
+            AAC).
+          </p>
+          <p>
+            *2 ISO/IEC 13818-7 (MPEG-2 AAC) and ISO/IEC 14496-3 (MPEG-4
+            AAC) ISO/IEC 14496-3:2009/Amd 4 defines the extended code
+            points up to 14.
+          </p>
+          <p>
+            <strong>6.2 Key for the AAC SubDescriptor</strong>
+          </p>
+          <p>
+            The key (UL) for the AAC SubDescriptor shall be as defined
+            in Table 2.
+          </p>
 
-  <section id="sec-license-element">
-    <h3>License Element</h3>
+          <table id="table-aac-key" width="100%">
+            <caption>
+              Example – <span style="color:red">Original</span>
+              Table 2 – Key for the AAC SubDescriptor
+            </caption>
+            <tr><th>Byte No.</th> <th>Description</th>                  <th>Value (hex)</th> <th>Meaning</th></tr>
+            <tr><td>1-7</td>      <td colspan="3">Defined in the Structural Header Metadata Implementation section of SMPTE ST 377-1</td></tr>
+            <tr><td>8</td>        <td>Register Version</td>             <td>01h</td>         <td>Version of the Registry</td></tr>
+            <tr><td>9-13</td>     <td colspan="3">Defined in the Structural Header Metadata Implementation section of SMPTE ST 377-1</td></tr>
+            <tr><td>14</td>       <td>Set Kind (1)</td>                 <td>01h</td>         <td rowspan="2">AAC SubDescriptor</td></tr>
+            <tr><td>15</td>       <td>Set Kind (2)</td>                 <td>78h</td></tr>
+            <tr><td>16</td>       <td>Reserved</td>                     <td>00</td>          <td>Reserved</td></tr>
+          </table>
+        </div>
+        <br>
+        <div style="border: 1px solid; padding-left: 10px; padding-right: 10px">
+          <table id="table-aac-sub-ul" width="100%">
+            <caption>
+              Example – <span style="color:red">Preferred</span>
+              Table 1 – AACSubDescriptor ULs
+            </caption>
+            <tr><th>Item Name</th>                            <th>Symbol</th>                  <th>Kind</th> <th>Item UL</th></tr>
+            <tr><td>AAC SubDescriptor <sub>[1,2.3]</sub></td> <td>AACSubDescriptor</td>        <td>LEAF</td> <td>urn:smpte:ul:060e2b34.027f0101.0d010101.01017800</td></tr>
+            <tr><td>AAC Sampling Frequency</td>               <td>AACSamplingFrequency</td>    <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0101010e.04020403.01040000</td></tr>
+            <tr><td>AAC Channel Configuration</td>            <td>AACChannelConfiguration</td> <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0101010e.04020403.01030000</td></tr>
+          </table>
+          <p class="note">
+            SMPTEST377-1definesthebytestructureofSetsandGroups
+          </p>
+          <p class="note">
+            AACSubDescriptor version byte is set to 1 according to
+            SMPTE policy
+          </p>
+          <table id="table-aac-sub-elements" width="100%">
+            <caption>
+              Example – <span style="color:red">Preferred</span>
+              Table 1 – AAC SubDescriptor
+            </caption>
+            <tr><th>Symbol</th>                 <th>Type</th>          <th>Len</th>                  <th>Req ?</th>          <th>Meaning</th> <th>Default</th></tr>
+            <tr><td>AACSubDescriptor</td>       <td>Set UL</td>        <td>16</td>                   <td>Req</td>            <td>Advanced Audio Coding SubDescriptor</td></tr>
+            <tr><td>Length</td>                 <td>BER Length</td>    <td>4</td>                    <td>Req</td>            <td>Set length</td></tr>
+            <tr><td colspan="6">All items from the abstract SubDescriptor as specified in SMPTE ST 377-1 annex B.3</td></tr>
+            <tr><td>AACSamplingFrequency</td>   <td>UInt8</td>         <td>1</td>                    <td>Opt</td>            <td>Low order 4 bits of Sampling Frequency Index. Upper 4 bits are zeros</td></tr>
+            <tr><td>AACChannelConfiguration</td><td>UInt8</td>         <td>1</td>                    <td>Opt</td>            <td>Low order 4 bits of Channel Configuration. Upper 4 bits are zeros</td></tr>
+          </table>
+        </div>
+        <dl>
+          <dt><strong>Symbol</strong></dt>
+          <dd>
+            value of the &lt;Symbol&gt; element to be listed in the
+            corresponding register for the UL. The case of the
+            characters and spellings shall be identical to the
+            register submission. If the row entry has no Symbol
+            (e.g. Length) then the value in that row should be in
+            italics. Constraints for symbol
+          </dd>
+          <dt><strong>Type</strong></dt>
+          <dd>
+            value of the &lt;Name&gt; element to be listed in the Types
+            register when the value of the element’s &lt;Type&gt; property
+            is resolved. The case of the characters, whitespace and
+            spellings shall be identical to those in the Types
+            register submission.
+          </dd>
+          <dt><strong>Len</strong></dt>
+          <dd>
+            <p>
+            [optional] the length in Bytes of the value field of the
+            KLV representation of the element provided as helper
+            information to the reader. If this optional column is
+            present, then the value shall match the value in the
+            register submission for that data type – it is duplicate
+            information in an MXF document.
+            </p>
+            <p>
+              When defining data types, the length of the new data
+              type shall be provided.
+            </p>
+          </dd>
+          <dt><strong>Notes</strong></dt>
+          <dd>
+            The notes should be numbered and a superscript index
+            should be added to the Item Name column or the Meaning
+            column to indicate which note applies to which element.
+          </dd>
+          <dt><strong>Table title</strong></dt>
+          <dd>
+            use of the word <strong>Label</strong>
+            or <strong>Element</strong> or <strong>Type</strong>
+            or <strong>Group</strong> is encouraged to help novice
+            readers locate the register in which the UL can be found
+          </dd>
+        </dl>
+        <p>
+          Extra explanatory free-form text outside the summary table
+          is encouraged to clearly
+        </p>
+      </section>
 
-  <p>The following example JSON Schema incorporates the above element in
-  accordance with <a href="#sec-cc-license-schema-resources"></a>, with the initial
-  keyword order recommended in <a href="#sec-keyword-order"></a>.</p>
+      <section id="sec-reffering">
+        <h3>Referring to ULs</h3>
+        <p>
+          In an MXF document is it often necessary to refer to
+          existing SMPTE ULs. Many legacy documents are inconsistent
+          in the way that this is done. Specifically, some legacy
+          documents have been inconsistent in the case of characters
+          and whitespace making document searches unreliable.
+        </p>
+        <p>
+          The <strong>Symbol</strong> of an element has consistent
+          character case, has no whitespace and is not subject to
+          line-break formatting issue. This makes it easy for
+          implementers to search for in document. Document authors
+          should verify that the publication version of documents have
+          not had the character case or whitespace of symbols altered
+          by non-technical editors.
+        </p>
+        <p>
+          Visually identifying symbols can be made easier for readers
+          by creating a word style with the following properties only:
+        </p>
+        <ul>
+          <li>
+            Style name: S keyword (this is already defined in the
+            SMPTE templates)
+          </li>
+          <li>
+            Style type: character
+          </li>
+          <li>
+            Font: Consolas (or Lucida Console or Ubuntu mono or
+            Courier New or monospace)
+          </li>
+        </ul>
+        <p>
+          This style can then be applied to all Symbols and other
+          formatting such as Bold, Size, Color will be inherited
+          accordingly. MXF document should use the element Symbol in
+          body text to refer to an element. If clarity is required,
+          the following phrasing may be used:
+        </p>
+        <blockquote>
+          The element with symbol AACSubDescriptor should ...
+        </blockquote>
+      </section>
 
-<pre>
-{
-  "$schema": "https://json-schema.org/draft/2020-12/meta/core",
-  "$id": "https://smpte-ra.org/json-schema/2199-1/2022/foo",
-  "$comment": "Copyright (c), Society of Motion Pictures and Television Engineers. Licensed under BSD-3-Clause (https://spdx.org/licenses/BSD-3-Clause.html).",
-  "title": "foo",
-  "type": "object",
-  "description": "This is an example schema for a fictitious foo object.",
-  "examples": [
-    {
-      "bar": "zyzx"
-    }
-}  
-</pre>
+      <section id="sec-summarizing-uls">
+        <h3>Summarizing ULs in a document</h3>
+        <p>
+          It may be helpful to the implementation community to know
+          which ULs are defined in any given document. An optional
+          informative Annex may be provided that includes informative
+          sections for each of the register submissions made in the
+          document. Each section should clearly indicate which
+          register the XML applies to and should contain the mature
+          submission that was entered into the register. An example
+          from ST 382-4 is given below.
+        </p>
+        <p>
+          All XML should be presented in a monospaced font and
+          indented with spaces. Color highlighting to assist
+          readability is optional.
+        </p>
+        <p>
+          Text indicating that in case of conflict with the body text
+          of the main document, then the body text is considered the
+          definitive reference.
+        </p>
+      </section>
 
-  </section>
-</section>
+      <div style="border: 1px solid; padding-left: 10px; padding-right: 10px">
+        <h3>Annex B – ULs Registered in this Document (<span style="color:red">Informative</span>)</h3>
+        <h3>B.1 Elements registered in this document</h3>
+        <p>
+          The XML document below is the mature submission for the
+          Elements Register. In case of conflict with the body text of
+          this document, the body text should be considered the
+          normative reference.
+        </p>
+        <pre>
+<code>&lt;!-- Metadata tags to support XML file editing --&gt;
+&lt;!-- --&gt;
+&lt;!-- Please fill these in if you edit this XML file --&gt;
+&lt;!-- author=Oliver Morgan and Patrick Waddell --&gt;
+&lt;!-- edit_date= 20161201--&gt;
+&lt;!-- summary_of_edit= add elements for AAC SubDescriptor--&gt;
+&lt;!-- author=Patrick Waddell --&gt;
+&lt;!-- edit_date= 20170210--&gt;
+&lt;!-- summary_of_edit= minor edits for Registrar--&gt;
+&lt;!-- --&gt;
+&lt;!-- DO NOT EDIT THIS TAG --&gt;
+&lt;!-- master_commit_tag=v000000075 --&gt;
+&lt;!-- DO NOT EDIT THIS TAG --&gt;
 
-<section id="sec-bibliographic-references">
-  <ul>
-    <li><cite id="bib-draft-bhutton-json-schema-00">IETF
-    draft-bhutton-json-schema-00</cite>, Wright, A., H. Andrews; B. Hutton, G.
-    Dennis, "JSON Schema: A Media Type for Describing JSON Documents", Work in
-    Progress, December 8, 2020.
-    <a>https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00</a>
-    </li>
-  </ul>
-</section>
+&lt;ElementsRegister xmlns="http://www.smpte-ra.org/schemas/335/2012"&gt;
+  &lt;Entries&gt;
+    &lt;Entry&gt;
+      &lt;Register&gt;Elements&lt;/Register&gt;
+      &lt;NamespaceName&gt;http://www.smpte-ra.org/reg/335/2012&lt;/NamespaceName&gt;
+      &lt;Symbol&gt;AACChannelConfiguration&lt;/Symbol&gt;ss
+      &lt;UL&gt;urn:smpte:ul:060e2b34.0101010e.04020403.01030000&lt;/UL&gt;
+      &lt;Kind&gt;LEAF&lt;/Kind&gt;
+      &lt;Name&gt;AAC Channel Configuration&lt;/Name&gt;
+      &lt;Definition&gt;Low order 4 bits of Channel Configuration. Upper 4 bits are zeros&lt;/Definition&gt;
+      &lt;DefiningDocument&gt;SMPTE ST 381-4&lt;/DefiningDocument&gt;
+      &lt;IsDeprecated&gt;false&lt;/IsDeprecated&gt;
+      &lt;ContextScope&gt;DefinedContext&lt;/ContextScope&gt;
+      &lt;Type&gt;urn:smpte:ul:060e2b34.01040101.01010100.00000000&lt;/Type&gt;
+    &lt;/Entry&gt;
+    &lt;Entry&gt;
+      &lt;Register&gt;Elements&lt;/Register&gt;
+      &lt;NamespaceName&gt;http://www.smpte-ra.org/reg/335/2012&lt;/NamespaceName&gt;
+      &lt;Symbol&gt;AACSamplingFrequency&lt;/Symbol&gt;
+      &lt;UL&gt;urn:smpte:ul:060e2b34.0101010e.04020403.01040000&lt;/UL&gt;
+      &lt;Kind&gt;LEAF&lt;/Kind&gt;
+      &lt;Name&gt;AAC Sampling Frequency&lt;/Name&gt;
+      &lt;Definition&gt;Low order 4 bits of Sampling Frequency Index. Upper 4 bits are zeros&lt;/Definition&gt;
+      &lt;DefiningDocument&gt;SMPTE ST 381-4&lt;/DefiningDocument&gt;
+      &lt;IsDeprecated&gt;false&lt;/IsDeprecated&gt;
+      &lt;ContextScope&gt;DefinedContext&lt;/ContextScope&gt;
+      &lt;Type&gt;urn:smpte:ul:060e2b34.01040101.01010100.00000000&lt;/Type&gt;
+    &lt;/Entry&gt;
+  &lt;/Entries&gt;
+&lt;/ElementsRegister&gt;</code></pre>
+      </div>
 
-</body>
 
+    </section>
+ </body&gt;
 </html>
