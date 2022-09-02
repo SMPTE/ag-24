@@ -11,17 +11,15 @@
     <meta itemprop="pubNumber" content="24" />
     <meta itemprop="pubState" content="published" />
     <meta itemprop="pubDateTime" content="2019-07-02" />
-    <title>AG-24 MXF UL Style Guidelines</title>
+    <title>MXF UL Style Guidelines</title>
   </head>
 
   <body>
 
     <section id="sec-foreword" class="unnumbered"></section>
 
-    <section id="sec-toc" class="unnumbered"></section>
-
-    <section id="sec-scope">
-      <h2>Scope</h2>
+    <section id="sec-purpose" class="unnumbered">
+      <h2>Purpose</h2>
       <p>
         This Administrative Guideline is a collection of guidelines
         and policies that are intended to help SMPTE Engineering
@@ -39,6 +37,8 @@
         Documents.
       </p>
     </section>
+
+    <section id="sec-toc" class="unnumbered"></section>
 
     <section id="sec-conformance"></section>
 
@@ -227,14 +227,14 @@
               Example – <span style="color:red">Preferred</span>
               Table 5 – Sound Essence Coding Label Value for AAC
             </caption>
-            <tr><th>Item Name</th>                             <th>Symbol</th>                                <th>Kind</th> <th>Item UL</th></tr>
-            <tr><td>MPEG 2 Advanced Audio Coding</td>          <td>MPEG_2_Advanced_Audio_Coding</td>          <td>NODE</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030000</td></tr>
-            <tr><td>MPEG 2 LC AAC</td>                         <td>MPEG_2_LC_AAC</td>                         <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030100</td></tr>
-            <tr><td>MPEG 2 AAC SBR</td>                        <td>MPEG_2_AAC_SBR</td>                        <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030200</td></tr>
-            <tr><td>MPEG 4 Advanced Audio Coding</td>          <td>MPEG_4_Advanced_Audio_Coding</td>          <td>NODE</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040000</td></tr>
-            <tr><td>MPEG 4 AAC Profile</td>                    <td>MPEG_4_AAC_Profile</td>                    <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040100</td></tr>
-            <tr><td>MPEG 4 High Efficiency AAC Profile</td>    <td>MPEG_4_High_Efficiency_AAC_Profile</td>    <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040200</td></tr>
-            <tr><td>MPEG 4 High Efficiency AAC v2 Profile</td> <td>MPEG_4_High_Efficiency_AAC_v2_Profile</td> <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040300</td></tr>
+            <tr><th>Item Name</th>                             <th>Symbol</th>                                             <th>Kind</th> <th>Item UL</th></tr>
+            <tr><td>MPEG 2 Advanced Audio Coding</td>          <td><code>MPEG_2_Advanced_Audio_Coding</code></td>          <td>NODE</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030000</td></tr>
+            <tr><td>MPEG 2 LC AAC</td>                         <td><code>MPEG_2_LC_AAC</code></td>                         <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030100</td></tr>
+            <tr><td>MPEG 2 AAC SBR</td>                        <td><code>MPEG_2_AAC_SBR</code></td>                        <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04030200</td></tr>
+            <tr><td>MPEG 4 Advanced Audio Coding</td>          <td><code>MPEG_4_Advanced_Audio_Coding</code></td>          <td>NODE</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040000</td></tr>
+            <tr><td>MPEG 4 AAC Profile</td>                    <td><code>MPEG_4_AAC_Profile</code></td>                    <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040100</td></tr>
+            <tr><td>MPEG 4 High Efficiency AAC Profile</td>    <td><code>MPEG_4_High_Efficiency_AAC_Profile</code></td>    <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040200</td></tr>
+            <tr><td>MPEG 4 High Efficiency AAC v2 Profile</td> <td><code>MPEG_4_High_Efficiency_AAC_v2_Profile</code></td> <td>LEAF</td> <td>urn:smpte:ul:060e2b34.0401010d.04020202.04040300</td></tr>
           </table>
           <p class="note">
             All labels are Leaves of
@@ -247,15 +247,15 @@
               Table 6 – Values of Bytes 14 and 15 for Sound
               Essence Coding Label for AAC Audio
             </caption>
-            <tr><th>MPEG Standard</th>                         <th>AAC General Name</th> <th>AAC Profile</th></tr>
-            <tr><td>MPEG_2_LC_AAC</td>                         <td> LC</td>              <td> Low Complexity profile MPEG-2 AAC</td></tr>
-            <tr><td>MPEG_2_AAC_SBR</td>                        <td>LC + SBR</td>         <td> Low Complexity profile MPEG-2 AAC+SBR</td></tr>
-            <tr><td>MPEG_4_AAC_Profile</td>                    <td>AAC LC</td>           <td>MPEG-4 AAC Profile</td></tr>
-            <tr><td>MPEG_4_High_Efficiency_AAC_Profile</td>    <td>AAC LC + SBR</td>     <td> MPEG-4 High Efficiency AAC Profile</td></tr>
-            <tr><td>MPEG_4_High_Efficiency_AAC_v2_Profile</td> <td>AAC + SBR + PS</td>   <td> MPEG-4 High Efficiency AAC v2 Profile</td></tr>
+            <tr><th>MPEG Standard</th>                                      <th>AAC General Name</th> <th>AAC Profile</th></tr>
+            <tr><td><code>MPEG_2_LC_AAC</code></td>                         <td> LC</td>              <td> Low Complexity profile MPEG-2 AAC</td></tr>
+            <tr><td><code>MPEG_2_AAC_SBR</code></td>                        <td>LC + SBR</td>         <td> Low Complexity profile MPEG-2 AAC+SBR</td></tr>
+            <tr><td><code>MPEG_4_AAC_Profile</code></td>                    <td>AAC LC</td>           <td>MPEG-4 AAC Profile</td></tr>
+            <tr><td><code>MPEG_4_High_Efficiency_AAC_Profile</code></td>    <td>AAC LC + SBR</td>     <td> MPEG-4 High Efficiency AAC Profile</td></tr>
+            <tr><td><code>MPEG_4_High_Efficiency_AAC_v2_Profile</code></td> <td>AAC + SBR + PS</td>   <td> MPEG-4 High Efficiency AAC v2 Profile</td></tr>
           </table>
           <p class="note">
-            AAC“GeneralName”isthecommonlyusedterminology.
+            AAC “GeneralName” is the commonly used terminology.
           </p>
         </div>
       </section>
@@ -289,7 +289,7 @@
               Example – <span style="color:red">Original</span>
               Table 1 – AAC SubDescriptor
             </caption>
-            <tr><th>Item Name</th>                 <th>Type</th>          <th>Len</th>              <th>Item UL</th>                                      <th>Req ?</th>          <th>Meaning</th>                                                                 <th>Default</th></tr>
+            <tr><th>Item Name</th>                 <th>Type</th>          <th>Len</th>              <th width="15%">Item UL</th>                          <th>Req ?</th>          <th>Meaning</th>                                                                 <th>Default</th></tr>
             <tr><td>AAC SubDescriptor</td>         <td>Set UL</td>        <td>16</td>               <td>See Table 2</td>                                  <td>Req</td>            <td>Advanced Audio Coding SubDescriptor</td>                                     <td></td></tr>
             <tr><td>Length</td>                    <td>BER Length</td>    <td>4</td>                <td></td>                                             <td>Req</td>            <td>Set length</td>                                                              <td></td></tr>
             <tr><td colspan="7"><center>All items from the abstract SubDescriptor as specified in SMPTE ST 377-1 annex B.3 „SubDescriptor</center></td></tr>
@@ -455,7 +455,7 @@
           the following phrasing may be used:
         </p>
         <blockquote>
-          The element with symbol AACSubDescriptor should ...
+          The element with symbol <code>AACSubDescriptor</code> should ...
         </blockquote>
       </section>
 
