@@ -20,7 +20,7 @@
         This Administrative Guideline is a collection of guidelines and policies that are intended to help SMPTE Engineering Document authors and editors when defining Universal Labels.
       </p>
       <p>
-        This Administrative Guideline augments the ISO Directives with information and recommendations to be used when writing SMPTE Engineering Documents.
+        This Administrative Guideline augments the <a href="#bib-iso-directives-part2"></a> with information and recommendations to be used when writing SMPTE Engineering Documents.
       </p>
       <p>
         <a href="#bib-smpte-ag-02"></a> describes file names, dates and file packages for documents in development. <a href="#bib-smpte-ag-16"></a> describes the Styles that are recommended for authoring Engineering Documents.
@@ -33,24 +33,10 @@
         <a>https://f.hubspotusercontent00.net/hubfs/5253154/SMPTE%20Standards%20OM%20v3.1.pdf</a></li>
         <li><cite id="bib-smpte-ag-02">SMPTE AG-02</cite>, Document Naming and Packaging
         <a>https://smpte.github.io/ag-02/</a></li>
-        <li><cite id="bib-smpte-ag-03">SMPTE AG-03</cite>, Permitted Normative References
-        <a>https://smpte.github.io/ag-03/</a></li>
-        <li><cite id="bib-smpte-ag-04-st">SMPTE AG-04-ST</cite>, Standards Template
-        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-ST-Standards-Template.docx</a></li>
-        <li><cite id="bib-smpte-ag-04-rp">SMPTE AG-04-RP</cite>, Recommended Practice Template
-        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-RP-Recommended-Practice-Template.docx</a></li>
-        <li><cite id="bib-smpte-ag-04-eg">SMPTE AG-04-EG</cite>, Engineering Guideline Template
-        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-EG-Engineering%20Guideline%20Template.dotx</a></li>
         <li><cite id="bib-smpte-ag-16">SMPTE AG-16</cite>, Standards Style Guide
         <a>https://smpte.github.io/ag-16/</a></li>
         <li><cite id="bib-smpte-ag-18">SMPTE AG-18</cite>, Metadata Registers Procedures
         <a>https://smpte.github.io/ag-18/</a></li>
-        <li><cite id="bib=smpte-st-2009">SMPTE ST 2029:2009</cite> Uniform Resource Names for SMPTE Resources
-          <a>https://doi.org/10.5594/SMPTE.ST2029.2009</a>
-        </li>
-        <li><cite id="bib-smpte-st-336">SMPTE ST 336:2017</cite> Data Encoding Protocol Using Key-Length-Value
-          <a>https://doi.org/10.5594/SMPTE.ST336.2017</a>
-        </li>
       </ul>
     </section>
 
@@ -70,18 +56,18 @@
           This document recommends UL styles that minimize errors for implementers copying ULs from MXF documents. The trend toward software processes for implementation and validation make this a priority over the original MXF style of using Word tables and long prose.
         </p>
         <p>
-          In the current Engineering Document templates, using Arial Bold 9 point for table headings and Arial undecorated 8 point for table cells reduces the chance of unwanted line breaks without the text being unnecessarily small.
+          In the current Engineering Document templates (<a href="#bib-smpte-ag-04-st"></a>, <a href="#bib-smpte-ag-04-eg"></a>, and <a href="#bib-smpte-ag-04-rp"></a>), using Arial Bold 9 point for table headings and Arial undecorated 8 point for table cells reduces the chance of unwanted line breaks without the text being unnecessarily small.
         </p>
       </section>
       
       <section id="sec-defining-uls">
         <h3>Defining individual ULs</h3>
         <p>
-          <a href="#table-preferred-ul"></a> shows an example of the preferred way for defining ULs in MXF documents. It is a modified version of Table 2 in SMPTE ST 2094-2.
+          <a href="#table-preferred-ul"></a> shows an example of the preferred way for defining ULs in MXF documents. It is a modified version of Table 2 in <a href="#bib-smpte-st-2094-4"></a>.
         </p>
 
         <table id="table-preferred-ul">
-          <caption>Example <em>Preferred</em> Table 2 updated from SMPTE ST 2094-2 – Group Node and Set Key for DMCVT Sets</caption>
+          <caption>Example <em>Preferred</em> Table 2 updated from <a href="#bib-smpte-st-2094-4"></a> – Group Node and Set Key for DMCVT Sets</caption>
           <thead>
             <tr>
               <th>Item Name</th>
@@ -145,7 +131,7 @@
           Extra explanatory free-form text outside the summary table is encouraged to clearly define the semantics of the UL.
         </p>
         <p>
-          The following example shows a UL description from SMPTE ST 382-4 (<a href="#table-sound-coding"></a>, <a href="#table-sound-coding-bytes"></a>) followed by the preferred alternative representation (<a href="#table-sound-compression"></a>, <a href="#table-aac-audio-bytes"></a>). Note that in the preferred representation, the second table is no longer part of the UL description and only serves to provide the common names of the AAC profiles. In most cases a second table is not required.
+          The following example shows a UL description from <a href="#bib-smpte-st-381-4"></a> (<a href="#table-sound-coding"></a>, <a href="#table-sound-coding-bytes"></a>) followed by the preferred alternative representation (<a href="#table-sound-compression"></a>, <a href="#table-aac-audio-bytes"></a>). Note that in the preferred representation, the second table is no longer part of the UL description and only serves to provide the common names of the AAC profiles. In most cases a second table is not required.
         </p>
 
         <div class="example">
@@ -472,7 +458,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td colspan="7">All items from the abstract SubDescriptor as specified in SMPTE ST 377-1 annex B.3 „SubDescriptor</td>
+                  <td colspan="7">All items from the abstract SubDescriptor as specified in <a href="#bib-smpte-st-377-1"></a> annex B.3 „SubDescriptor</td>
                 </tr>
                 <tr>
                   <td>AAC Sampling Frequency</td>
@@ -495,10 +481,10 @@
               </tbody>
             </table>
             <p>
-              *1 ISO/IEC 13818-7 (MPEG-2 AAC) and ISO/IEC 14496-3 (MPEG-4 AAC).
+              *1 <a href="#bib-isoiec-13818-7"></a> (MPEG-2 AAC) and <a href="#bib-isoiec-14496-3"></a>  (MPEG-4 AAC).
             </p>
             <p>
-              *2 ISO/IEC 13818-7 (MPEG-2 AAC) and ISO/IEC 14496-3 (MPEG-4 AAC) ISO/IEC 14496-3:2009/Amd 4 defines the extended code points up to 14.
+              *2 <a href="#bib-isoiec-13818-7"></a>  (MPEG-2 AAC) and <a href="#bib-isoiec-14496-3"></a> (MPEG-4 AAC) <a href="#bib-isoiec-14496-3-amd4"></a> defines the extended code points up to 14.
             </p>
             <p>
               <strong>6.2 Key for the AAC SubDescriptor</strong>
@@ -520,7 +506,7 @@
               <tbody>
                 <tr>
                   <td>1-7</td>
-                  <td colspan="3">Defined in the Structural Header Metadata Implementation section of SMPTE ST 377-1</td>
+                  <td colspan="3">Defined in the Structural Header Metadata Implementation section of <a href="#bib-smpte-st-377-1"></a></td>
                 </tr>
                 <tr>
                   <td>8</td>
@@ -530,7 +516,7 @@
                 </tr>
                 <tr>
                   <td>9-13</td>
-                  <td colspan="3">Defined in the Structural Header Metadata Implementation section of SMPTE ST 377-1</td>
+                  <td colspan="3">Defined in the Structural Header Metadata Implementation section of <a href="#bib-smpte-st-377-1"></a></td>
                 </tr>
                 <tr>
                   <td>14</td>
@@ -587,7 +573,7 @@
             </table>
 
             <p class="note">
-              SMPTE ST377-1 definesthebytestructureofSetsandGroups
+              <a href="#bib-smpte-st-377-1"></a> definesthebytestructureofSetsandGroups
             </p>
             <p class="note">
               AACSubDescriptor version byte is set to 1 according to SMPTE policy
@@ -620,7 +606,7 @@
                   <td>Set length</td>
                 </tr>
                 <tr>
-                  <td colspan="6">All items from the abstract SubDescriptor as specified in SMPTE ST 377-1 annex B.3</td>
+                  <td colspan="6">All items from the abstract SubDescriptor as specified in <a href="#bib-smpte-st-377-1"></a> annex B.3</td>
                 </tr>
                 <tr>
                   <td>AACSamplingFrequency</td>
@@ -689,7 +675,7 @@
         </p>
         <ul>
           <li>
-            Style name: S keyword (this is already defined in the SMPTE templates)
+            Style name: S keyword (this is already defined in <a href="#bib-smpte-ag-04-st"></a>, <a href="#bib-smpte-ag-04-eg"></a>, and <a href="#bib-smpte-ag-04-rp"></a>)
           </li>
           <li>
             Style type: character
@@ -711,7 +697,7 @@ The element with symbol AACSubDescriptor should ...
       <section id="sec-summarizing-uls">
         <h3>Summarizing ULs in a document</h3>
         <p>
-          It may be helpful to the implementation community to know which ULs are defined in any given document. An <em>optional</em> informative Annex may be provided that includes informative sections for each of the register submissions made in the document. Each section should clearly indicate which register the XML applies to and should contain the mature submission that was entered into the register. An example from ST 382-4 is given below.
+          It may be helpful to the implementation community to know which ULs are defined in any given document. An <em>optional</em> informative Annex may be provided that includes informative sections for each of the register submissions made in the document. Each section should clearly indicate which register the XML applies to and should contain the mature submission that was entered into the register, as defined in <a href="#bib-smpte-ag-18"></a>. An example from <a href="#bib-smpte-st-381-4"></a> is given below.
         </p>
         <p>
           All XML should be presented in a monospaced font and indented with spaces. Color highlighting to assist readability is optional.
@@ -781,6 +767,31 @@ The element with symbol AACSubDescriptor should ...
 
     </section>
 
+  </section>
+
+  <section id="sec-bibliography">
+    <ul>
+      <li><cite id="bib-iso-directives-part2">ISO/IEC Directives, Part 2</cite>, Principles and rules for the structure and drafting of ISO and IEC documents (Ninth edition, 2021)
+        <a>https://www.iso.org/sites/directives/current/part2/index.xhtml</a></li>
+      <li><cite id="bib-smpte-ag-04-st">SMPTE AG-04-ST</cite>, Standards Template
+        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-ST-Standards-Template.docx</a></li>
+        <li><cite id="bib-smpte-ag-04-rp">SMPTE AG-04-RP</cite>, Recommended Practice Template
+        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-RP-Recommended-Practice-Template.docx</a></li>
+        <li><cite id="bib-smpte-ag-04-eg">SMPTE AG-04-EG</cite>, Engineering Guideline Template
+        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-EG-Engineering%20Guideline%20Template.dotx</a></li>
+      <li><cite id="bib-smpte-st-2094-4">SMPTE ST 2094-2</cite>:2017, Dynamic Metadata for Color Volume Transform — KLV Encoding and MXF Mapping
+        <a>https://doi.org/10.5594/SMPTE.ST2094-2.2017</a></li>
+      <li><cite id="bib-smpte-st-381-4">SMPTE ST 381-4</cite>:2017, Mapping AAC Compressed Audio into the MXF Generic Container
+        <a>https://doi.org/10.5594/SMPTE.ST381-4.2017</a></li>
+      <li><cite id="bib-smpte-st-377-1">SMPTE ST 377-1</cite>:2019, Material Exchange Format (MXF) — File Format Specification
+        <a>https://doi.org/10.5594/SMPTE.ST377-1.2019</a></li>
+      <li><cite id="bib-isoiec-13818-7">ISO/IEC 13818-7</cite>:2006, Information technology — Generic coding of moving pictures and associated audio information — Part 7: Advanced Audio Coding (AAC)
+        <a>https://www.iso.org/standard/43345.html</a></li>
+      <li><cite id="bib-isoiec-14496-3">ISO/IEC 14496-3</cite>:2009, Information technology — Coding of audio-visual objects — Part 3: Audio
+        <a>https://www.iso.org/standard/53943.html</a></li>
+      <li><cite id="bib-isoiec-14496-3-amd4">ISO/IEC 14496-3:2009/Amd 4</cite>:2013, Information technology — Coding of audio-visual objects — Part 3: Audio — Amendment 4: New levels for AAC profiles
+        <a>https://www.iso.org/standard/63022.html</a></li>
+    </ul>
   </section>
 
  </body>
