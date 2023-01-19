@@ -1,37 +1,21 @@
-<!DOCTYPE html lang="en">
+<!DOCTYPE html>
 <html>
 
   <head itemscope="itemscope" itemtype="http://smpte.org/standards/documents">
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="tooling/smpte.js"></script>
-    <link rel="stylesheet" href="tooling/smpte.css" />
-    <!-- Do not edit above this line -->
-    <!-- Start of editable section in header-->
-    <!-- Update only content attributes in each meta element below as needed -->
+    <script src="../tooling/smpte.js"></script>
     <meta itemprop="pubType" content="AG" />
     <meta itemprop="pubNumber" content="24" />
     <meta itemprop="pubState" content="draft" />
     <meta itemprop="pubDateTime" content="20XX-XX-XX" />
-    <!-- update text for title element as needed -->
     <title>MXF UL Style Guidelines</title>
-    <!-- End of editable section in header-->
   </head>
 
   <body>
 
-    <!-- Start of TOC - Do not remove or add anything in this section, generation is automated -->
-    <section id="sec-toc"></section>
-    <!-- End of TOC -->
-
-    <!-- Start of Forward - Do not remove or add anything in this section, generation is automated -->
-    <section id="sec-foreword"></section>
-    <!-- End of Forward -->
-
-    <!-- Start of Scope - Do not remove this section -->
     <section id="sec-scope">
-      <!-- Add paragraphs in this section as needed for scope -->
       <p>
         This Administrative Guideline is a collection of guidelines and policies that are intended to help SMPTE Engineering Document authors and editors when defining Universal Labels.
       </p>
@@ -42,16 +26,8 @@
         <a href="#bib-smpte-ag-02"></a> describes file names, dates and file packages for documents in development. <a href="#bib-smpte-ag-16"></a> describes the Styles that are recommended for authoring Engineering Documents.
       </p>
     </section>
-    <!-- End of Scope -->
 
-    <!-- Start of Conformance - Do not remove or add anything in this section, generation is automated -->
-    <section id="sec-conformance"></section>
-    <!-- End of Conformance -->
-
-    <!-- Start of Normative references - Do not remove this section -->
     <section id="sec-normative-references">
-
-      <!-- Add `li` sub elements as needed in this section as needed for references. If no Normative references, remove the entire `ul` element. Pre text for this section is auto generated based on `ul` present or not. -->
       <ul>
         <li><cite id="bib-smpte-standards-operation-manual">SMPTE Standards Operation Manual</cite>, v3.1
         <a>https://f.hubspotusercontent00.net/hubfs/5253154/SMPTE%20Standards%20OM%20v3.1.pdf</a></li>
@@ -67,7 +43,7 @@
         <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-EG-Engineering%20Guideline%20Template.dotx</a></li>
         <li><cite id="bib-smpte-ag-16">SMPTE AG-16</cite>, Standards Style Guide
         <a>https://smpte.github.io/ag-16/</a></li>
-        <li><cite id="bib-smpte-ag-02">SMPTE AG-18</cite>, Metadata Registers Procedures
+        <li><cite id="bib-smpte-ag-18">SMPTE AG-18</cite>, Metadata Registers Procedures
         <a>https://smpte.github.io/ag-18/</a></li>
         <li><cite id="bib=smpte-st-2009">SMPTE ST 2029:2009</cite> Uniform Resource Names for SMPTE Resources
           <a>https://doi.org/10.5594/SMPTE.ST2029.2009</a>
@@ -77,22 +53,9 @@
         </li>
       </ul>
     </section>
-    <!-- End of Normative references -->
-
-    <!-- Start of Terms and definitions - Do not remove this section -->
-    <section id="sec-terms-and-definitions">
-
-      <!-- Use the `ul` element to list external documents where Terms are defined (use same logic as referenced docs in the body of the document as example shows). Add `dt/dd` sub element pairs as needed for Terms to be defined internally in this document. Remove either the `ul` if no external Terms, or `dl` if no internally defined Terms. If no Terms needed to be defined at all, remove the both `ul` and `dl` elements. Pre text for this section is auto generated based on what elements are present. -->
-
-    </section>
-    <!-- End of Terms and definitions -->
-
-    <!-- Start of editable area. Add sections as needed, following the examples below. `id` attribue is required for each section (and subsection) for linking into TOC. Headers are required for labeling each section. Use `h2` element for top level, and `h3`, `h4`, etc. for nested sub sections as needed. For Annexes, add `class="annex"` to the top level section element, as example shows. Numbering is auto generated, including nesting. --> 
-
 
     <section id="sec-universal-labels">
       <h2>Universal Labels</h2>
-
       <section id="sec-style">
         <h3>Style Guidelines</h3>
         <p>
@@ -116,8 +79,6 @@
         <p>
           <a href="#table-preferred-ul"></a> shows an example of the preferred way for defining ULs in MXF documents. It is a modified version of Table 2 in SMPTE ST 2094-2.
         </p>
-
-
 
         <table id="table-preferred-ul">
           <caption>Example <em>Preferred</em> Table 2 updated from SMPTE ST 2094-2 – Group Node and Set Key for DMCVT Sets</caption>
@@ -157,7 +118,6 @@
           </tbody>
         </table>
 
-
         <dl>
           <dt>Item Name</dt>
           <dd>
@@ -188,9 +148,9 @@
           The following example shows a UL description from SMPTE ST 382-4 (<a href="#table-sound-coding"></a>, <a href="#table-sound-coding-bytes"></a>) followed by the preferred alternative representation (<a href="#table-sound-compression"></a>, <a href="#table-aac-audio-bytes"></a>). Note that in the preferred representation, the second table is no longer part of the UL description and only serves to provide the common names of the AAC profiles. In most cases a second table is not required.
         </p>
 
-        <p class="example">
+        <div class="example">
           <div style="border: 1px solid; padding-left: 10px; padding-right: 10px; background-color: lightgrey;">
-
+        
             <table id="table-sound-coding">
               <caption>Example – <em>Original</em> "Table 5 – Sound Essence Coding Label Value for AAC"</caption>
               <thead>
@@ -458,7 +418,7 @@
             <p class="note"><code>AAC General Name</code> is the commonly used terminology.</p>
 
           </div>
-        </p>
+        </div>
 
       </section>
 
@@ -477,9 +437,9 @@
           Two worked examples are shown in <a href="#table-aac-sub"></a>/<a href="#table-aac-key"></a> and <a href="#table-aac-sub-ul"></a>/<a href="#table-aac-sub-elements"></a>. The examples marked ‘preferred’ are preferred since it is facilitating text search and checking:
         </p>
 
-        <p class="example">
+        <div class="example">
           <div style="border: 1px solid; padding-left: 10px; padding-right: 10px; background-color: lightgrey;">
-
+  
             <table id="table-aac-sub">
               <caption>Example – <em>Original</em> "Table 1 – AAC SubDescriptor"</caption>
               <thead>
@@ -512,7 +472,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td colspan="7"><center>All items from the abstract SubDescriptor as specified in SMPTE ST 377-1 annex B.3 „SubDescriptor</center></td>
+                  <td colspan="7">All items from the abstract SubDescriptor as specified in SMPTE ST 377-1 annex B.3 „SubDescriptor</td>
                 </tr>
                 <tr>
                   <td>AAC Sampling Frequency</td>
@@ -680,7 +640,7 @@
             </table>
 
           </div>
-        </p>
+        </div>
 
         <dl>
           <dt>Symbol</dt>
@@ -713,6 +673,7 @@
         <p>
           Extra explanatory free-form text outside the summary table is encouraged to clearly
         </p>
+
       </section>
 
       <section id="sec-reffering">
@@ -740,6 +701,7 @@
         <p>
           This style can then be applied to all Symbols and other formatting such as Bold, Size, Color will be inherited accordingly. MXF document should use the element Symbol in body text to refer to an element. If clarity is required, the following phrasing may be used:
         </p>
+
 <pre>
 The element with symbol AACSubDescriptor should ...
 </pre>
@@ -757,9 +719,8 @@ The element with symbol AACSubDescriptor should ...
         <p>
           Text indicating that in case of conflict with the body text of the main document, then the body text is considered the definitive reference.
         </p>
-      </section>
 
-      <p class="example">
+      <div class="example">
         <div style="border: 1px solid; padding-left: 10px; padding-right: 10px; background-color: lightgrey;">
 
           <h3>Annex B – ULs Registered in this Document (Informative)</h3>
@@ -768,58 +729,59 @@ The element with symbol AACSubDescriptor should ...
             The XML document below is the mature submission for the Elements Register. In case of conflict with the body text of this document, the body text should be considered the normative reference.
           </p>
 
-  <pre>
+<pre>
 
-  <code>&lt;!-- Metadata tags to support XML file editing --&gt;
-  &lt;!-- --&gt;
-  &lt;!-- Please fill these in if you edit this XML file --&gt;
-  &lt;!-- author=Oliver Morgan and Patrick Waddell --&gt;
-  &lt;!-- edit_date= 20161201--&gt;
-  &lt;!-- summary_of_edit= add elements for AAC SubDescriptor--&gt;
-  &lt;!-- author=Patrick Waddell --&gt;
-  &lt;!-- edit_date= 20170210--&gt;
-  &lt;!-- summary_of_edit= minor edits for Registrar--&gt;
-  &lt;!-- --&gt;
-  &lt;!-- DO NOT EDIT THIS TAG --&gt;
-  &lt;!-- master_commit_tag=v000000075 --&gt;
-  &lt;!-- DO NOT EDIT THIS TAG --&gt;
+&lt;!-- Metadata tags to support XML file editing --&gt;
+&lt;!-- --&gt;
+&lt;!-- Please fill these in if you edit this XML file --&gt;
+&lt;!-- author=Oliver Morgan and Patrick Waddell --&gt;
+&lt;!-- edit_date= 20161201--&gt;
+&lt;!-- summary_of_edit= add elements for AAC SubDescriptor--&gt;
+&lt;!-- author=Patrick Waddell --&gt;
+&lt;!-- edit_date= 20170210--&gt;
+&lt;!-- summary_of_edit= minor edits for Registrar--&gt;
+&lt;!-- --&gt;
+&lt;!-- DO NOT EDIT THIS TAG --&gt;
+&lt;!-- master_commit_tag=v000000075 --&gt;
+&lt;!-- DO NOT EDIT THIS TAG --&gt;
 
-  &lt;ElementsRegister xmlns="http://www.smpte-ra.org/schemas/335/2012"&gt;
-    &lt;Entries&gt;
-      &lt;Entry&gt;
-        &lt;Register&gt;Elements&lt;/Register&gt;
-        &lt;NamespaceName&gt;http://www.smpte-ra.org/reg/335/2012&lt;/NamespaceName&gt;
-        &lt;Symbol&gt;AACChannelConfiguration&lt;/Symbol&gt;ss
-        &lt;UL&gt;urn:smpte:ul:060e2b34.0101010e.04020403.01030000&lt;/UL&gt;
-        &lt;Kind&gt;LEAF&lt;/Kind&gt;
-        &lt;Name&gt;AAC Channel Configuration&lt;/Name&gt;
-        &lt;Definition&gt;Low order 4 bits of Channel Configuration. Upper 4 bits are zeros&lt;/Definition&gt;
-        &lt;DefiningDocument&gt;SMPTE ST 381-4&lt;/DefiningDocument&gt;
-        &lt;IsDeprecated&gt;false&lt;/IsDeprecated&gt;
-        &lt;ContextScope&gt;DefinedContext&lt;/ContextScope&gt;
-        &lt;Type&gt;urn:smpte:ul:060e2b34.01040101.01010100.00000000&lt;/Type&gt;
-      &lt;/Entry&gt;
-      &lt;Entry&gt;
-        &lt;Register&gt;Elements&lt;/Register&gt;
-        &lt;NamespaceName&gt;http://www.smpte-ra.org/reg/335/2012&lt;/NamespaceName&gt;
-        &lt;Symbol&gt;AACSamplingFrequency&lt;/Symbol&gt;
-        &lt;UL&gt;urn:smpte:ul:060e2b34.0101010e.04020403.01040000&lt;/UL&gt;
-        &lt;Kind&gt;LEAF&lt;/Kind&gt;
-        &lt;Name&gt;AAC Sampling Frequency&lt;/Name&gt;
-        &lt;Definition&gt;Low order 4 bits of Sampling Frequency Index. Upper 4 bits are zeros&lt;/Definition&gt;
-        &lt;DefiningDocument&gt;SMPTE ST 381-4&lt;/DefiningDocument&gt;
-        &lt;IsDeprecated&gt;false&lt;/IsDeprecated&gt;
-        &lt;ContextScope&gt;DefinedContext&lt;/ContextScope&gt;
-        &lt;Type&gt;urn:smpte:ul:060e2b34.01040101.01010100.00000000&lt;/Type&gt;
-      &lt;/Entry&gt;
-    &lt;/Entries&gt;
-  &lt;/ElementsRegister&gt;</code>
-  </pre>
-
+&lt;ElementsRegister xmlns="http://www.smpte-ra.org/schemas/335/2012"&gt;
+  &lt;Entries&gt;
+    &lt;Entry&gt;
+      &lt;Register&gt;Elements&lt;/Register&gt;
+      &lt;NamespaceName&gt;http://www.smpte-ra.org/reg/335/2012&lt;/NamespaceName&gt;
+      &lt;Symbol&gt;AACChannelConfiguration&lt;/Symbol&gt;ss
+      &lt;UL&gt;urn:smpte:ul:060e2b34.0101010e.04020403.01030000&lt;/UL&gt;
+      &lt;Kind&gt;LEAF&lt;/Kind&gt;
+      &lt;Name&gt;AAC Channel Configuration&lt;/Name&gt;
+      &lt;Definition&gt;Low order 4 bits of Channel Configuration. Upper 4 bits are zeros&lt;/Definition&gt;
+      &lt;DefiningDocument&gt;SMPTE ST 381-4&lt;/DefiningDocument&gt;
+      &lt;IsDeprecated&gt;false&lt;/IsDeprecated&gt;
+      &lt;ContextScope&gt;DefinedContext&lt;/ContextScope&gt;
+      &lt;Type&gt;urn:smpte:ul:060e2b34.01040101.01010100.00000000&lt;/Type&gt;
+    &lt;/Entry&gt;
+    &lt;Entry&gt;
+      &lt;Register&gt;Elements&lt;/Register&gt;
+      &lt;NamespaceName&gt;http://www.smpte-ra.org/reg/335/2012&lt;/NamespaceName&gt;
+      &lt;Symbol&gt;AACSamplingFrequency&lt;/Symbol&gt;
+      &lt;UL&gt;urn:smpte:ul:060e2b34.0101010e.04020403.01040000&lt;/UL&gt;
+      &lt;Kind&gt;LEAF&lt;/Kind&gt;
+      &lt;Name&gt;AAC Sampling Frequency&lt;/Name&gt;
+      &lt;Definition&gt;Low order 4 bits of Sampling Frequency Index. Upper 4 bits are zeros&lt;/Definition&gt;
+      &lt;DefiningDocument&gt;SMPTE ST 381-4&lt;/DefiningDocument&gt;
+      &lt;IsDeprecated&gt;false&lt;/IsDeprecated&gt;
+      &lt;ContextScope&gt;DefinedContext&lt;/ContextScope&gt;
+      &lt;Type&gt;urn:smpte:ul:060e2b34.01040101.01010100.00000000&lt;/Type&gt;
+    &lt;/Entry&gt;
+  &lt;/Entries&gt;
+&lt;/ElementsRegister&gt;
+</pre>
         </div>
-      </p>
-
+      </div>
 
     </section>
+
+  </section>
+
  </body>
 </html>
