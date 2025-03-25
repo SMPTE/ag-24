@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html>
-
-  <head itemscope="itemscope" itemtype="http://smpte.org/standards/documents">
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="../tooling/smpte.js"></script>
-    <meta itemprop="pubType" content="AG" />
-    <meta itemprop="pubNumber" content="24" />
-    <meta itemprop="pubState" content="draft" />
-    <meta itemprop="pubDateTime" content="2023-04-09" />
+<html lang="en">
+<head itemscope="itemscope" itemtype="http://smpte.org/standards/documents">
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="module" src="../tooling/smpte.js"></script>
+  <meta itemprop="pubType" content="AG" />
+  <meta itemprop="pubNumber" content="24" />
+  <meta itemprop="pubState" content="pub" />
+  <meta itemprop="pubDateTime" content="2025-03-25" />
     <title>MXF UL Style Guidelines</title>
   </head>
 
@@ -32,11 +31,13 @@
         <li><cite id="bib-smpte-standards-operation-manual">SMPTE Standards Operation Manual</cite>, v3.1
         <a>https://f.hubspotusercontent00.net/hubfs/5253154/SMPTE%20Standards%20OM%20v3.1.pdf</a></li>
         <li><cite id="bib-smpte-ag-02">SMPTE AG-02</cite>, Document Naming and Packaging
-        <a>https://www.smpte.org/about/policies-and-governance</a></li>
+        <a>https://doc.smpte-doc.org/ag-02/main/</a></li>
         <li><cite id="bib-smpte-ag-16">SMPTE AG-16</cite>, Standards Style Guide
-        <a>https://www.smpte.org/about/policies-and-governance</a></li>
+        <a>https://doc.smpte-doc.org/ag-16/main/</a></li>
         <li><cite id="bib-smpte-ag-18">SMPTE AG-18</cite>, Metadata Registers Procedures
-        <a>https://www.smpte.org/about/policies-and-governance</a></li>
+        <a>https://doc.smpte-doc.org/ag-18/main/</a></li>
+        <li><cite id="bib-ag-26">SMPTE AG-26</cite>, HTML Pub: Tooling and documentation for HTML documents
+          <a>https://doc.smpte-doc.org/html-pub/main/</a></li>
       </ul>
     </section>
 
@@ -56,7 +57,7 @@
           This document recommends UL styles that minimize errors for implementers copying ULs from MXF documents. The trend toward software processes for implementation and validation make this a priority over the original MXF style of using Word tables and long prose.
         </p>
         <p>
-          In the current Engineering Document templates (<a href="#bib-smpte-ag-04-st"></a>, <a href="#bib-smpte-ag-04-eg"></a>, and <a href="#bib-smpte-ag-04-rp"></a>), using Arial Bold 9 point for table headings and Arial undecorated 8 point for table cells reduces the chance of unwanted line breaks without the text being unnecessarily small.
+          In the current Engineering Document template (<a href="#bib-ag-27"></a>), using HTML reduces the chance of unwanted line breaks without the text being unnecessarily small.
         </p>
       </section>
       
@@ -303,7 +304,7 @@
 
             <p class="note"><code>AAC General Name</code> is the commonly used terminology.</p>
 
-            <hr/>
+        
 
             <table id="table-sound-compression">
               <caption>Example – <em>Preferred</em> "Table 5 – Sound Essence Coding Label Value for AAC"</caption>
@@ -538,7 +539,6 @@
               </tbody>
             </table>
 
-            <hr/>
 
             <table id="table-aac-sub-ul">
               <caption>Example – <em>Preferred</em> "Table 1 – AACSubDescriptor ULs"</caption>
@@ -640,13 +640,8 @@
           </dd>
           <dt>Len</dt>
           <dd>
-            <p>
-            [optional] the length in Bytes of the value field of the KLV representation of the element provided as helper information to the reader. If this optional column is present, then the value shall match the value in the register submission for that data type – it is duplicate information in an MXF document.
-            </p>
-            <p>
-              When defining data types, the length of the new data type shall be provided.
-            </p>
-          </dd>
+          
+            [optional] the length in Bytes of the value field of the KLV representation of the element provided as helper information to the reader. If this optional column is present, then the value shall match the value in the register submission for that data type – it is duplicate information in an MXF document. When defining data types, the length of the new data type shall be provided.</dd>
           <dt>Notes</dt>
           <dd>
             The notes should be numbered and a superscript index should be added to the Item Name column or the Meaning column to indicate which note applies to which element.
@@ -671,21 +666,11 @@
           The <code>Symbol</code> of an element has consistent character case, has no whitespace and is not subject to line-break formatting issue. This makes it easy for implementers to search for in document. Document authors should verify that the publication version of documents have not had the character case or whitespace of symbols altered by non-technical editors.
         </p>
         <p>
-          Visually identifying symbols can be made easier for readers by creating a word style with the following properties only:
+          Visually identifying symbols can be made easier for readers by utilizing the <code>code</code> and/or <code>pre</code> elements as needed, as defined by <a href="#bib-ag-27"></a>. 
         </p>
-        <ul>
-          <li>
-            Style name: S keyword (this is already defined in <a href="#bib-smpte-ag-04-st"></a>, <a href="#bib-smpte-ag-04-eg"></a>, and <a href="#bib-smpte-ag-04-rp"></a>)
-          </li>
-          <li>
-            Style type: character
-          </li>
-          <li>
-            Font: Consolas (or Lucida Console or Ubuntu mono or Courier New or monospace)
-          </li>
-        </ul>
+        
         <p>
-          This style can then be applied to all Symbols and other formatting such as Bold, Size, Color will be inherited accordingly. MXF document should use the element Symbol in body text to refer to an element. If clarity is required, the following phrasing may be used:
+          MXF document should use the element Symbol in body text to refer to an element. If clarity is required, the following phrasing may be used:
         </p>
 
 <pre>
@@ -709,8 +694,8 @@ The element with symbol AACSubDescriptor should ...
       <div class="example">
         <div style="border: 1px solid; padding-left: 10px; padding-right: 10px; background-color: lightgrey;">
 
-          <h3>Annex B – ULs Registered in this Document (Informative)</h3>
-          <h3>B.1 Elements registered in this document</h3>
+          <p><b>Annex B – ULs Registered in this Document (Informative)</b></p>
+          <p><b>B.1 Elements registered in this document</b></p>
           <p>
             The XML document below is the mature submission for the Elements Register. In case of conflict with the body text of this document, the body text should be considered the normative reference.
           </p>
@@ -773,12 +758,8 @@ The element with symbol AACSubDescriptor should ...
     <ul>
       <li><cite id="bib-iso-directives-part2">ISO/IEC Directives, Part 2</cite>, Principles and rules for the structure and drafting of ISO and IEC documents (Ninth edition, 2021)
         <a>https://www.iso.org/sites/directives/current/part2/index.xhtml</a></li>
-      <li><cite id="bib-smpte-ag-04-st">SMPTE AG-04-ST</cite>, Standards Template
-        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-ST-Standards-Template.docx</a></li>
-        <li><cite id="bib-smpte-ag-04-rp">SMPTE AG-04-RP</cite>, Recommended Practice Template
-        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-RP-Recommended-Practice-Template.docx</a></li>
-        <li><cite id="bib-smpte-ag-04-eg">SMPTE AG-04-EG</cite>, Engineering Guideline Template
-        <a>https://f.hubspotusercontent00.net/hubfs/5253154/Standards%20Files/AG-04-EG-Engineering%20Guideline%20Template.dotx</a></li>
+      <li><cite id="bib-ag-27">SMPTE AG-27</cite>, HTML Pub: Template (Base HTML Repo with Tooling)
+          <a>https://github.com/SMPTE/html-pub-template</a></li>
       <li><cite id="bib-smpte-st-2094-4">SMPTE ST 2094-2</cite> (latest edition), Dynamic Metadata for Color Volume Transform — KLV Encoding and MXF Mapping</li>
       <li><cite id="bib-smpte-st-381-4">SMPTE ST 381-4</cite> (latest edition), Mapping AAC Compressed Audio into the MXF Generic Container</li>
       <li><cite id="bib-smpte-st-377-1">SMPTE ST 377-1</cite> (latest edition), Material Exchange Format (MXF) — File Format Specification</li>
